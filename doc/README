@@ -1,23 +1,23 @@
-############################################################
-#
 #  TCP/IP networking routines for ZX Spectrum, version 1.00
-#
-# (c) 1998 Juraj Rehak, Glip
-#		<glip@cyber-wizard.com>
-# (c) 1998 Lubos Janica, Lubko
-#		<janica@fornax.elf.stuba.sk>
-# (c) 1998 Milan Pikula, WWW
-#		<www@mail.www.planet.sk>
-#
+(c) 1998 Juraj Rehak, Glip <glip@cyber-wizard.com>
+(c) 1998 Lubos Janica, Lubko <janica@fornax.elf.stuba.sk>
+(c) 1998 Milan Pikula, WWW <milan.pikula@ipsec.info>
 
-1.	PREAMBLE
-1.1	WHAT IS IT?
-1.2	HARDWARE REQUIREMENTS
-2.	CONFIGURING
-3.	COMPILING
-4.	RUNNING
+## Historic side note
 
-1. PREAMBLE
+This is an old project from 1998, which resulted in a fully working TCP/IP
+for our beloved ZX Spectrum, using only a single bit on the parallel port
+for output and a single bit for input. The serial port was emulated on top
+of that, bit by bit, in software. On top of the serial line, there is
+a fully working implementation of PPP, IP, ICMP, UDP, TCP, and some
+sample applications including a web server.
+
+If you succeed with building and running the code with modern tools,
+please do let me know! Pull requests very welcome.
+
+Used to be compiled with grand-grand-grandmother of [https://github.com/darconeous/sdcc/tree/master/sdas/asz80]
+
+## PREAMBLE
 
  These are the release notes for our implementation of TCP/IP networking.
 
@@ -25,7 +25,7 @@
  This software is NOT free. It's distributed under the terms of the
   GNU General Public License (see the COPYING file for more details).
 
-1.1 WHAT IS IT?
+### WHAT IS IT?
 
  This software allows you to use your ZX Spectrum computer as a
   workstation of your TCP/IP network. It's not fully RFC-compliant,
@@ -42,27 +42,27 @@
 
 There can be minor support of rfc 791(ip), 792, 794(icmp) and 793(tcp).
 
-1.2 HARDWARE REQUIREMENTS
+### HARDWARE REQUIREMENTS
 
  Runs on 3.5MHz 48/128k spectrum. Supports just few serial interfaces,
   but other ones can be easily included by re-writting low-level IO
   routines.
 
-2. CONFIGURING
+## CONFIGURING
 
 * Look at 'src/app' directory. choose one application. make link
     to it from 'src/' by
-	cd src ; ln -s app/my_app.asm application.asm
+	`cd src ; ln -s app/my_app.asm application.asm`
 
 * Look at 'src/arch/' directory, find your favourite routines and make
     symlinks to them from 'src/' (at this time only serial routines are
     configurable via arch directory)
 * Edit 'src/config.h' and follow instructions and comments.
 
-3. COMPILING
+## COMPILING
 
-* make clean
-* make
+* `make clean`
+* `make`
     Result will be named tcpip.tap
 
 optionally, you may wish to do
@@ -71,7 +71,7 @@ optionally, you may wish to do
     tape-in of your spectrum. Before it, you probably would like to
     write  LOAD ""  on your spectrum ;).
 
-4. RUNNING
+## RUNNING
 
 After loading to your speccy, just break that dumb endless basic loader
   and enter command  RUN.
