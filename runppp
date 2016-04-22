@@ -1,0 +1,63 @@
+#!/bin/sh
+
+SPEED="38400"
+TTY="/dev/ttyS0"
+IP="195.146.18.245:195.146.18.246"
+DEBUG=0
+LOCKFILEPREFIX="/var/lock/LCK.."
+LOCKFILESUFFIX="ttyS0"
+
+if [ "$1" = "-h" -o "$1" = "--help" ]; then
+	echo "$0: Usage:"
+	echo "		$0 [-d] [speed] [tty [local:remote]]]"
+	echo ""
+	echo "Defaults:"
+	echo "	Speed:		$SPEED"
+	echo "	TTY:		$TTY"
+	echo "	IP:		$IP"
+	echo "	LockName:	$LOCKFILESUFFIX"
+	exit 0
+fi
+
+if [ "$1" = "-d" ]; then
+	DEBUG=1
+	shift
+fi
+
+if [ "$1" != "" ]; then
+	expr "$1" + "1" 2> /dev/null > /dev/null
+	if [ "$?" = "0" ]; then
+		SPEED="$1"
+		echo "Using speed $SPEED."
+		shift
+	fi
+fi
+if [ "$1" != "" ]; then
+	TTY="$1"
+	if [ ! -c "$TTY" ]; then
+		TTY="/dev/$1"
+	fi
+	if [ ! -c "$TTY" ]; then
+		TTY="/dev/tty$1"
+	fi
+	if [ ! -c "$TTY" ]; then
+		echo "Incorrect TTY "\""$1"\"". Aborting."
+		exit 1
+	fi
+	echo "Using TTY $TTY."
+fi
+if [ "$2" != "" ]; then
+	IP="$2"
+	echo "Using IP $IP"
+fi
+
+echo "Running pppd..."
+if [ "$DEBUG" = "1" ]; then
+	/usr/sbin/pppd -d -d -d -d -d -d -d -d -d -d passive -defaultroute -detach local "$IP" "$TTY" "$SPEED" netmask 255.255.255.252
+else
+	/usr/sbin/pppd passive -defaultroute -detach local "$IP" "$TTY" "$SPEED" netmask 255.255.255.252
+fi
+
+# -crtscts
+# kdebug 1
+

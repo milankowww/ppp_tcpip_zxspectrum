@@ -1,0 +1,78 @@
+############################################################
+#
+#  TCP/IP networking routines for ZX Spectrum, version 1.00
+#
+# (c) 1998 Juraj Rehak, Glip
+#		<glip@cyber-wizard.com>
+# (c) 1998 Lubos Janica, Lubko
+#		<janica@fornax.elf.stuba.sk>
+# (c) 1998 Milan Pikula, WWW
+#		<www@mail.www.planet.sk>
+#
+
+1.	PREAMBLE
+1.1	WHAT IS IT?
+1.2	HARDWARE REQUIREMENTS
+2.	CONFIGURING
+3.	COMPILING
+4.	RUNNING
+
+1. PREAMBLE
+
+ These are the release notes for our implementation of TCP/IP networking.
+
+ Warning:
+ This software is NOT free. It's distributed under the terms of the
+  GNU General Public License (see the COPYING file for more details).
+
+1.1 WHAT IS IT?
+
+ This software allows you to use your ZX Spectrum computer as a
+  workstation of your TCP/IP network. It's not fully RFC-compliant,
+  but many of incompatibilities, made for efficiency, can be turned
+  off by configuring and re-compiling.
+ Low-level part of the implementation includes:
+
+	PPP support	(rfc 1661, rfc 1171, rfc 1331)
+	  NCP, LCP	(rfc 1172, rfc 1332)
+	IP layer	(rfc 1122)
+	ICMP subsystem	(rfc 794, rfc 1122)
+	UDP subsystem	(rfc 1122)
+	TCP subsystem	(rfc 1122)
+
+There can be minor support of rfc 791(ip), 792, 794(icmp) and 793(tcp).
+
+1.2 HARDWARE REQUIREMENTS
+
+ Runs on 3.5MHz 48/128k spectrum. Supports just few serial interfaces,
+  but other ones can be easily included by re-writting low-level IO
+  routines.
+
+2. CONFIGURING
+
+* Look at 'src/app' directory. choose one application. make link
+    to it from 'src/' by
+	cd src ; ln -s app/my_app.asm application.asm
+
+* Look at 'src/arch/' directory, find your favourite routines and make
+    symlinks to them from 'src/' (at this time only serial routines are
+    configurable via arch directory)
+* Edit 'src/config.h' and follow instructions and comments.
+
+3. COMPILING
+
+* make clean
+* make
+    Result will be named tcpip.tap
+
+optionally, you may wish to do
+* make install
+    which will send output to your sound-card, hopefully connected to the
+    tape-in of your spectrum. Before it, you probably would like to
+    write  LOAD ""  on your spectrum ;).
+
+4. RUNNING
+
+After loading to your speccy, just break that dumb endless basic loader
+  and enter command  RUN.
+

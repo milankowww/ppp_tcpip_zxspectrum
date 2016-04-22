@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$1" = "" ]; then
+	echo -n 'file name: '
+	read NAME
+else
+	NAME="$1"
+fi
+
+PREFIX=`echo -n "$NAME" | cut -d. -f1`
+NAME=$PREFIX.tap
+trap "./n2tap $NAME tmp_$PREFIX.* ; rm tmp_$PREFIX.*" 2
+./decode tmp_$PREFIX
+

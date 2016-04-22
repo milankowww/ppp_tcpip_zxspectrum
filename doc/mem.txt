@@ -1,0 +1,66 @@
+	Hex	Dec	Size		Desc
+	
+	5Fb4	24500	---	---	vsetky dynamicke humusy
+
+
+	EB00		512	0200	TCP socket table 
+	ED00		256	0100	UDP socket table
+	EE00		512	0200	fcstab, paddovana na 512
+
+	F100	61696	3072	0C00	incomming buffer na PPP
+	FD00	64768	258	0102	interrupt vektor
+	FE02	65026	254	00FE	stack
+	FF00	65280	256	0100	vyhradene, interrupt
+
+format UDP socketu :
+offset	size
+0	1	 flagy 76543210
+			0 - Platny socket
+			1 - pasivny socket pre server .
+			2 - Error on socket
+			6 - Na socket prisiel packet
+			7 - Ma sa vratit, ak daco prislo 
+Ostatne zavisi od 1. bitu vo flagoch.
+Ak bit 1 = 0
+1	4	remote IP
+5	2	remote port
+7	2	source port
+9	2	limit for buffer
+11	2	pointer to buffer
+13	2	pointer na ini data
+	V v bufri sa uklada dlzka, data
+Ak bit 1 = 1
+1	2	source port
+3	2	limit for buffer
+5	2	pointer to buffer
+13	2	pointer na ini data
+	Ak pride packet, zapise sa dlzka+16, 16 bytov pripravena polozka pre socket a dalej data 
+
+format TCP socketu :
+offset	size
+0	1	 flagy 76543210
+			0 - Platny socket
+			1 - Pasivny socket
+			2 - Error on socket
+			3 - ACK is OK
+			5 - Ak je dobre ACK, nech zvysi nr_fds
+			6 - Na socket daco prislo 
+			7 - Ma sa vratit, ak daco prislo
+Pasivny socket
+1	2	source port
+3	2	limit for buffer
+5	2	pointer to buffer
+13	2	pointer na ini data
+Aktivny socket
+1	4	remote IP
+5	2	source port
+7	2	remote port
+9	2	limit for buffer
+11	2	pointer to buffer
+-- druha banka --
+0	4	Sequence number
+4	4	Ack.
+8	1	unused
+9	2	limit for bufer for fdreset
+11	2	pointer to bufer for fdreset
+

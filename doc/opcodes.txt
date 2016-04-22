@@ -1,0 +1,764 @@
+ADC	A,(HL)		8E		7
+ADC	A,(IX + dis)	DD 8E XX	19
+ADC	A,(IY + dis)	FD 8E XX	19
+ADC	A,A		8F		4
+ADC	A,B		88		4
+ADC	A,C		89		4
+ADC	A,D		8A		4
+ADC	A,E		8B		4
+ADC	A,H		8C		4
+ADC	A,L		8D		4
+ADC	A,NN		CE NN		7
+ADC	HL,BC		ED 4A		15
+ADC	HL,BC		ED 5A		15
+ADC	HL,DE		ED 6A		15
+ADC	HL,SP		ED 7A		15
+ADD	A,(HL)		86		7
+ADD	(IX + dis)	DD 86 XX	19
+ADD	(IY + dis)	FD 86 XX	19
+ADD	A,A		87		4
+ADD	A,B		80		4
+ADD	A,C		81		4
+ADD	A,D		82		4
+ADD	A,E		83		4
+ADD	A,H		84		4
+ADD	A,L		85		4
+ADD	A,NN		C6 NN		7
+ADD	HL,BC		09		11
+ADD	HL,BC		19		11
+ADD	HL,DE		29		11
+ADD	HL,SP		39		11
+ADD	IX,BC		DD 09		15
+ADD	IX,BC		DD 19		15
+ADD	IX,DE		DD 29		15
+ADD	IX,SP		DD 39		15
+ADD	IY,BC		FD 09		15
+ADD	IY,BC		FD 19		15
+ADD	IY,DE		FD 29		15
+ADD	IY,SP		FD 39		15
+AND	(HL)		A6		7
+AND	(IX + dis)	DD A6 XX	19
+AND	(IY + dis)	FD A6 XX	19
+AND	A		A7		4
+AND	B		A0		4
+AND	C		A1		4
+AND	D		A2		4
+AND	E		A3		4
+AND	H		A4		4
+AND	L		A5		4
+ADD	NN		E6 NN		7
+BIT	0,(HL)		CB 47		12
+BIT	0,(IX + dis)	DD CB XX 46	20
+BIT	0,(IY + dis)	FD CB XX 46	20
+BIT	0,A		CB 47		8
+BIT	0,B		CB 40		8
+BIT	0,C		CB 41		8
+BIT	0,D		CB 42		8
+BIT	0,E		CB 43		8
+BIT	0,H		CB 44		8
+BIT	0,L		CB 45		8
+BIT	1,(HL)		CB 4E		12
+BIT	1,(IX + dis)	DD CB XX 4E	20
+BIT	1,(IY + dis)	FD CB XX 4E	20
+BIT	1,A		CB 4F		8
+BIT	1,B		CB 48		8
+BIT	1,C		CB 49		8
+BIT	1,D		CB 4A		8
+BIT	1,E		CB 4B		8
+BIT	1,H		CB 4C		8
+BIT	1,L		CB 4D		8
+BIT	2,(HL)		CB 56		12
+BIT	2,(IX + dis)	DD CB XX 56	20
+BIT	2,(IY + dis)	FD CB XX 56	20
+BIT	2,A		CB 57		8
+BIT	2,B		CB 50		8
+BIT	2,C		CB 51		8
+BIT	2,D		CB 52		8
+BIT	2,E		CB 53		8
+BIT	2,H		CB 54		8
+BIT	2,L		CB 55		8
+BIT	3,(HL)		CB 5E		12
+BIT	3,(IX + dis)	DD CB XX 5E	20
+BIT	3,(IY + dis)	FD CB XX 5E	20
+BIT	3,A		CB 5F		8
+BIT	3,B		CB 58		8
+BIT	3,C		CB 59		8
+BIT	3,D		CB 5A		8
+BIT	3,E		CB 5B		8
+BIT	3,H		CB 5C		8
+BIT	3,L		CB 5D		8
+BIT	4,(HL)		CB 66		12
+BIT	4,(IX + dis)	DD CB XX 66	20
+BIT	4,(IY + dis)	FD CB XX 66	20
+BIT	4,A		CB 67		8
+BIT	4,B		CB 60		8
+BIT	4,C		CB 61		8
+BIT	4,D		CB 62		8
+BIT	4,E		CB 63		8
+BIT	4,H		CB 64		8
+BIT	4,L		CB 65		8
+BIT	5,(HL)		CB 6E		12
+BIT	5,(IX + dis)	DD CB XX 6E	20
+BIT	5,(IY + dis)	FD CB XX 6E	20
+BIT	5,A		CB 6F		8
+BIT	5,B		CB 68		8
+BIT	5,C		CB 69		8
+BIT	5,D		CB 6A		8
+BIT	5,E		CB 6B		8
+BIT	5,H		CB 6C		8
+BIT	5,L		CB 6D		8
+BIT	6,(HL)		CB 76		12
+BIT	6,(IX + dis)	DD CB XX 76	20
+BIT	6,(IY + dis)	FD CB XX 76	20
+BIT	6,A		CB 77		8
+BIT	6,B		CB 70		8
+BIT	6,C		CB 71		8
+BIT	6,D		CB 72		8
+BIT	6,E		CB 73		8
+BIT	6,H		CB 74		8
+BIT	6,L		CB 75		8
+BIT	7,(HL)		CB 7E		12
+BIT	7,(IX + dis)	DD CB XX 7E	20
+BIT	7,(IY + dis)	FD CB XX 7E	20
+BIT	7,A		CB 7F		8
+BIT	7,B		CB 78		8
+BIT	7,C		CB 79		8
+BIT	7,D		CB 7A		8
+BIT	7,E		CB 7B		8
+BIT	7,H		CB 7C		8
+BIT	7,L		CB 7D		8
+CALL	ADDR		CD XX XX	17
+CALL	Z,ADDR		CC XX XX	17/10
+CALL	NZ,ADDR		C4 XX XX	17/10
+CALL	C,ADDR		DC XX XX	17/10
+CALL	NC,ADDR		D4 XX XX	17/10
+CALL	PE,ADDR		EC XX XX	17/10
+CALL	PO,ADDR		E4 XX XX	17/10
+CALL	M,ADDR		FC XX XX	17/10
+CALL	P,ADDR		F4 XX XX	17/10
+CCF			3F		4
+CP	(HL)		BE		7
+CP	(IX + dis)	DD BE XX	19
+CP	(IY + dis)	FD BE XX	19
+CP	A		BF		4
+CP	B		B8		4
+CP	C		B9		4
+CP	D		BA		4
+CP	E		BB		4
+CP	H		BC		4
+CP	L		BD		4
+CP	NN		FE NN		7
+CPD			ED A9		16
+CPDR			ED B9		21/16
+CPI			ED A1		16
+CPIR			ED B1		21/16
+CPL			2F		4
+DAA			27		4
+DEC	(HL)		35		11
+DEC	(IX + dis)	DD 35 XX	23
+DEC	(IY + dis)	FD 35 XX	23
+DEC	A		3D		4
+DEC	B		05		4
+DEC	C		0D		4
+DEC	D		15		4
+DEC	E		5D		4
+DEC	H		25		4
+DEC	L		2D		4
+DEC	BC		0B		6
+DEC	DE		1B		6
+DEC	HL		2B		6
+DEC	IX		DD 2B		10
+DEC	IX		FD 2B		10
+DEC	SP		3B		6
+DI			F3		4
+DJNZ	dis		10 XX		13/8
+EI			FB		4
+EX	(SP),HL		E3		19
+EX	(SP),IX		DD E3		23
+EX	(SP),IY		FD E3		23
+EX	AF,AF'		08		4
+EX	DE,HL		EB		4
+EXX			D9		4
+HALT			76		4
+IM	0		ED 46		8
+IM	1		ED 56		8
+IM	2		ED 5E		8
+IN	A,(port)	DB,NN		11
+IN	A,(C)		ED 78		12
+IN	B,(C)		ED 40		12
+IN	C,(C)		ED 48		12
+IN	D,(C)		ED 50		12
+IN	E,(C)		ED 58		12
+IN	H,(C)		ED 60		12
+IN	L,(C)		ED 68		12
+INC	(HL)		34		11
+INC	(IX + dis)	DD 34 XX	23
+INC	(IY + dis)	FD 34 XX	23
+INC	A		3C		4
+INC	B		04		4
+INC	C		0C		4
+INC	D		14		4
+INC	E		1C		4
+INC	H		24		4
+INC	L		2C		4
+INC	BC		03		6
+INC	DE		13		6
+INC	HL		23		6
+INC	IX		DD 23		10
+INC	IY		FD 23		10
+INC	SP		33		6
+IND			ED AA		16
+INI			ED A2		16
+INDR			ED BA		21/16
+INIR			ED B2		21/16
+JP	(HL)		E9		4
+JP	(IX)		DD E9		8
+JP	(IY)		FD E9		8
+JP	ADDR		C3 XX XX	10
+JP	Z,ADDR		C3 XX XX	10
+JP	NZ,ADDR		C3 XX XX	10
+JP	C,ADDR		C3 XX XX	10
+JP	NC,ADDR		C3 XX XX	10
+JP	PE,ADDR		C3 XX XX	10
+JP	PO,ADDR		C3 XX XX	10
+JP	M,ADDR		C3 XX XX	10
+JP	P,ADDR		C3 XX XX	10
+JR	dis		18 XX		12
+JR	Z,dis		28 XX		12/7
+JR	NZ,dis		20 XX		12/7
+JR	C,dis		38 XX		12/7
+JR	NC,dis		30 XX		12/7
+LD	(ADDR),A	32 XX XX	13
+LD	(ADDR),BC	ED 43 XX XX	20
+LD	(ADDR),DE	ED 53 XX XX	20
+LD	(ADDR),HL	ED 63 XX XX	20
+LD	(ADDR),HL	22 XX XX	16
+LD	(ADDR),IX	DD 22 XX XX	20
+LD	(ADDR),IY	FD 22 XX XX	20
+LD	(ADDR),SP	ED 73 XX XX	20
+LD	(BC),A		02		7
+LD	(DE),A		12		7
+LD	(HL),A		77		7
+LD	(HL),B		70		7
+LD	(HL),C		71		7
+LD	(HL),D		72		7
+LD	(HL),E		73		7
+LD	(HL),H		74		7
+LD	(HL),L		75		7
+LD	(HL),NN		36 NN		10
+LD	(IX + dis),A	DD 77		19
+LD	(IX + dis),B	DD 70		19
+LD	(IX + dis),C	DD 71		19
+LD	(IX + dis),D	DD 72		19
+LD	(IX + dis),E	DD 73		19
+LD	(IX + dis),H	DD 74		19
+LD	(IX + dis),L	DD 75		19
+LD	(IX + dis),NN	DD 36 NN	19
+LD	(IY + dis),A	FD 77		19
+LD	(IY + dis),B	FD 70		19
+LD	(IY + dis),C	FD 71		19
+LD	(IY + dis),D	FD 72		19
+LD	(IY + dis),E	FD 73		19
+LD	(IY + dis),H	FD 74		19
+LD	(IY + dis),L	FD 75		19
+LD	(IY + dis),NN	FD 36 NN	19
+LD	A,(ADDR)	3A XX XX	13
+LD	A,(BC)		0A		7
+LD	A,(DE)		1A		7
+LD	A,(HL)		7E		7
+LD	A,(IX + dis)	DD 7E XX	19
+LD	A,(IY + dis)	FD 7E XX	19
+LD	A,A		7F		4
+LD	A,B		78		4
+LD	A,C		79		4
+LD	A,D		7A		4
+LD	A,E		7B		4
+LD	A,H		7C		4
+LD	A,L		7D		4
+LD	A,NN		3E NN		7
+LD	A,I		ED 57		9
+LD	A,R		ED 5F		9
+LD	B,(HL)		46		7
+LD	B,(IX + dis)	DD 46 XX	19
+LD	B,(IY + dis)	FD 46 XX	19
+LD	B,A		47		4
+LD	B,B		40		4
+LD	B,C		41		4
+LD	B,D		42		4
+LD	B,E		43		4
+LD	B,H		44		4
+LD	B,L		45		4
+LD	B,NN		06 NN		7
+LD	BC,(ADDR)	ED 4B XX XX	20
+LD	BC,NNNN		01 NN NN	10
+LD	C,(HL)		4E		7
+LD	C,(IX + dis)	DD 4E XX	19
+LD	C,(IY + dis)	FD 4E XX	19
+LD	C,A		4F		4
+LD	C,B		48		4
+LD	C,C		49		4
+LD	C,D		4A		4
+LD	C,E		4B		4
+LD	C,H		4C		4
+LD	C,L		4D		4
+LD	C,NN		0E NN		7
+LD	D,(HL)		56		7
+LD	D,(IX + dis)	DD 56 XX	19
+LD	D,(IY + dis)	FD 56 XX	19
+LD	D,A		57		4
+LD	D,B		50		4
+LD	D,C		51		4
+LD	D,D		52		4
+LD	D,E		53		4
+LD	D,H		54		4
+LD	D,L		55		4
+LD	D,NN		56 NN		7
+LD	DE,(ADDR)	ED 5B XX XX	20
+LD	DE,NNNN		11 NN NN	10
+LD	E,(HL)		5E		7
+LD	E,(IX + dis)	DD 5E XX	19
+LD	E,(IY + dis)	FD 5E XX	19
+LD	E,A		5F		4
+LD	E,B		58		4
+LD	E,C		59		4
+LD	E,D		5A		4
+LD	E,E		5B		4
+LD	E,H		5C		4
+LD	E,L		5D		4
+LD	E,NN		1E NN		7
+LD	H,(HL)		66		7
+LD	H,(IX + dis)	DD 66 XX	19
+LD	H,(IY + dis)	FD 66 XX	19
+LD	H,A		67		4
+LD	H,B		60		4
+LD	H,C		61		4
+LD	H,D		62		4
+LD	H,E		63		4
+LD	H,H		64		4
+LD	H,L		65		4
+LD	H,NN		66 NN		7
+LD	HL,(ADDR)	ED 6B XX XX	20
+LD	HL,(ADDR)	2A XX XX	16
+LD	HL,NNNN		21 NN NN	10
+LD	L,(HL)		6E		7
+LD	L,(IX + dis)	DD 6E XX	19
+LD	L,(IY + dis)	FD 6E XX	19
+LD	L,A		6F		4
+LD	L,B		68		4
+LD	L,C		69		4
+LD	L,D		6A		4
+LD	L,E		6B		4
+LD	L,H		6C		4
+LD	L,L		6D		4
+LD	L,NN		2E NN		7
+LD	IX,(ADDR)	DD 2A XX XX	20
+LD	IX,NNNN		DD 21 NN NN	14
+LD	IY,(ADDR)	FD 2A XX XX	20
+LD	IY,NNNN		FD 21 NN NN	14
+LD	I,A		ED,47		9
+LD	R,A		ED 4F		9
+LD	SP,(ADDR)	ED 7B XX XX	20
+LD	SP,HL		F9		6
+LD	SP,IX		DD F9		10
+LD	SP,IY		FD F9		10
+LD	SP,NNNN		21 NN NN	10
+LDD			ED A8		16
+LDI			ED A0		16
+LDDR			ED B8		21/16
+LDIR			ED B0		21/16
+NEG			ED 44		8
+NOP			00		4
+OR	(HL)		B6		7
+OR	(IX + dis)	DD B6 XX	19
+OR	(IY + dis)	FD B6 XX	19
+OR	A		B7		4
+OR	B		B0		4
+OR	C		B1		4
+OR	D		B2		4
+OR	E		B3		4
+OR	H		B4		4
+OR	L		B5		4
+OR	NN		F6 NN		7
+OTDR			ED BB		21/16
+OTIR			ED B3		21/16
+OUT	(port),A	D3 XX		11
+OUT	(C),A		ED 79		12
+OUT	(C),B		ED 41		12
+OUT	(C),C		ED 49		12
+OUT	(C),D		ED 51		12
+OUT	(C),E		ED 59		12
+OUT	(C),H		ED 61		12
+OUT	(C),L		ED 69		12
+OUTD			ED AB		16
+OUTI			ED A3		16
+POP	AF		F1		10
+POP	BC		C1		10
+POP	DE		D1		10
+POP	HL		E1		10
+POP	IX		DD E1		14
+POP	IY		FD E1		14
+PUSH	AF		F5		11
+PUSH	BC		C5		11
+PUSH	DE		D5		11
+PUSH	HL		E5		11
+PUSH	IX		DD E5		15
+PUSH	IY		FD E5		15
+RES	0,(HL)		CB 86		15
+RES	0,(IX + dis)	DD CB XX 86	23
+RES	0,(IY + dis)	FD CB XX 86	23
+RES	0,A		CB 87		8
+RES	0,B		CB 80		8
+RES	0,C		CB 81		8
+RES	0,D		CB 82		8
+RES	0,E		CB 83		8
+RES	0,H		CB 84		8
+RES	0,L		CB 85		8
+RES	1,(HL)		CB 8E		15
+RES	1,(IX + dis)	DD CB XX 8E	23
+RES	1,(IY + dis)	FD CB XX 8E	23
+RES	1,A		CB 8F		8
+RES	1,B		CB 88		8
+RES	1,C		CB 89		8
+RES	1,D		CB 8A		8
+RES	1,E		CB 8B		8
+RES	1,H		CB 8C		8
+RES	1,L		CB 8D		8
+RES	2,(HL)		CB 96		15
+RES	2,(IX + dis)	DD CB XX 96	23
+RES	2,(IY + dis)	FD CB XX 96	23
+RES	2,A		CB 97		8
+RES	2,B		CB 90		8
+RES	2,C		CB 91		8
+RES	2,D		CB 92		8
+RES	2,E		CB 93		8
+RES	2,H		CB 94		8
+RES	2,L		CB 95		8
+RES	3,(HL)		CB 9E		15
+RES	3,(IX + dis)	DD CB XX 9E	23
+RES	3,(IY + dis)	FD CB XX 9E	23
+RES	3,A		CB 9F		8
+RES	3,B		CB 98		8
+RES	3,C		CB 99		8
+RES	3,D		CB 9A		8
+RES	3,E		CB 9B		8
+RES	3,H		CB 9C		8
+RES	3,L		CB 9D		8
+RES	4,(HL)		CB A6		15
+RES	4,(IX + dis)	DD CB XX A6	23
+RES	4,(IY + dis)	FD CB XX A6	23
+RES	4,A		CB A7		8
+RES	4,B		CB A0		8
+RES	4,C		CB A1		8
+RES	4,D		CB A2		8
+RES	4,E		CB A3		8
+RES	4,H		CB A4		8
+RES	4,L		CB A5		8
+RES	5,(HL)		CB AE		15
+RES	5,(IX + dis)	DD CB XX AE	23
+RES	5,(IY + dis)	FD CB XX AE	23
+RES	5,A		CB AF		8
+RES	5,B		CB A8		8
+RES	5,C		CB A9		8
+RES	5,D		CB AA		8
+RES	5,E		CB AB		8
+RES	5,H		CB AC		8
+RES	5,L		CB AD		8
+RES	6,(HL)		CB B6		15
+RES	6,(IX + dis)	DD CB XX B6	23
+RES	6,(IY + dis)	FD CB XX B6	23
+RES	6,A		CB B7		8
+RES	6,B		CB B0		8
+RES	6,C		CB B1		8
+RES	6,D		CB B2		8
+RES	6,E		CB B3		8
+RES	6,H		CB B4		8
+RES	6,L		CB B5		8
+RES	7,(HL)		CB BE		15
+RES	7,(IX + dis)	DD CB XX BE	23
+RES	7,(IY + dis)	FD CB XX BE	23
+RES	7,A		CB BF		8
+RES	7,B		CB B8		8
+RES	7,C		CB B9		8
+RES	7,D		CB BA		8
+RES	7,E		CB BB		8
+RES	7,H		CB BC		8
+RES	7,L		CB BD		8
+RET			C9		10
+RET	Z		C8		11/5
+RET	ZN		C0		11/5
+RET	C		D8		11/5
+RET	NN		D0		11/5
+RET	PE		E8		11/5
+RET	PO		E0		11/5
+RET	M		F8		11/5
+RET	P		F0		11/5
+RETI			ED 4D		14
+RETN			ED 45		14
+RL	(HL)		CB 16		15
+RL	(IX + dis)	DD CB XX 16	23
+RL	(IY + dis)	FD CB XX 16	23
+RL	A		CB 17		8
+RL	B		CB 10		8
+RL	C		CB 11		8
+RL	D		CB 12		8
+RL	E		CB 13		8
+RL	H		CB 14		8
+RL	L		CB 15		8
+RLA			17		4
+RLC	(HL)		CB 06		15
+RLC	(IX + dis)	DD CB XX 06	23
+RLC	(IY + dis)	FD CB XX 06	23
+RLC	A		CB 07		8
+RLC	B		CB 00		8
+RLC	C		CB 01		8
+RLC	D		CB 02		8
+RLC	E		CB 03		8
+RLC	H		CB 04		8
+RLC	L		CB 05		8
+RLCA			07		4
+RLD			ED 6F		18
+RR	(HL)		CB 1E		15
+RR	(IX + dis)	DD CB XX 1E	23
+RR	(IY + dis)	FD CB XX 1E	23
+RR	A		CB 1F		8
+RR	B		CB 18		8
+RR	C		CB 19		8
+RR	D		CB 1A		8
+RR	E		CB 1B		8
+RR	H		CB 1C		8
+RR	L		CB 1D		8
+RRA			1F		4
+RRC	(HL)		CB 0E		15
+RRC	(IX + dis)	DD CB XX 0E	23
+RRC	(IY + dis)	FD CB XX 0E	23
+RRC	A		CB 0F		8
+RRC	B		CB 08		8
+RRC	C		CB 09		8
+RRC	D		CB 0A		8
+RRC	E		CB 0B		8
+RRC	H		CB 0C		8
+RRC	L		CB 0D		8
+RRCA			0F		4
+RRD			ED 67		18
+RST	00		C7		11
+RST	08		CF		11
+RST	10		D7		11
+RST	18		DF		11
+RST	20		E7		11
+RST	28		EF		11
+RST	30		F7		11
+RST	38		FF		11
+SBC	A,(HL)		9E		7
+SBC	A,(IX + dis)	DD 9E		19
+SBC	A,(IY + dis)	FD 9E		19
+SBC	A,A		9F		4
+SBC	A,B		98		4
+SBC	A,C		99		4
+SBC	A,D		9A		4
+SBC	A,E		9B		4
+SBC	A,H		9C		4
+SBC	A,L		9D		4
+SBC	A,NN		DE NN		7
+SBC	HL,BC		ED 42		15
+SBC	HL,DE		ED 52		15
+SBC	HL,HL		ED 62		15
+SBC	HL,SP		ED 72		15
+SCF			37		4
+SET	0,(HL)		CB C6		15
+SET	0,(IX + dis)	DD CB XX C6	23
+SET	0,(IY + dis)	FD CB XX C6	23
+SET	0,A		CB C7		8
+SET	0,B		CB C0		8
+SET	0,C		CB C1		8
+SET	0,D		CB C2		8
+SET	0,E		CB C3		8
+SET	0,H		CB C4		8
+SET	0,L		CB C5		8
+SET	1,(HL)		CB CE		15
+SET	1,(IX + dis)	DD CB XX CE	23
+SET	1,(IY + dis)	FD CB XX CE	23
+SET	1,A		CB CF		8
+SET	1,B		CB C8		8
+SET	1,C		CB C9		8
+SET	1,D		CB CA		8
+SET	1,E		CB CB		8
+SET	1,H		CB CC		8
+SET	1,L		CB CD		8
+SET	2,(HL)		CB D6		15
+SET	2,(IX + dis)	DD CB XX D6	23
+SET	2,(IY + dis)	FD CB XX D6	23
+SET	2,A		CB D7		8
+SET	2,B		CB D0		8
+SET	2,C		CB D1		8
+SET	2,D		CB D2		8
+SET	2,E		CB D3		8
+SET	2,H		CB D4		8
+SET	2,L		CB D5		8
+SET	3,(HL)		CB DE		15
+SET	3,(IX + dis)	DD CB XX DE	23
+SET	3,(IY + dis)	FD CB XX DE	23
+SET	3,A		CB DF		8
+SET	3,B		CB D8		8
+SET	3,C		CB D9		8
+SET	3,D		CB DA		8
+SET	3,E		CB DB		8
+SET	3,H		CB DC		8
+SET	3,L		CB DD		8
+SET	4,(HL)		CB E6		15
+SET	4,(IX + dis)	DD CB XX E6	23
+SET	4,(IY + dis)	FD CB XX E6	23
+SET	4,A		CB E7		8
+SET	4,B		CB E0		8
+SET	4,C		CB E1		8
+SET	4,D		CB E2		8
+SET	4,E		CB E3		8
+SET	4,H		CB E4		8
+SET	4,L		CB E5		8
+SET	5,(HL)		CB EE		15
+SET	5,(IX + dis)	DD CB XX EE	23
+SET	5,(IY + dis)	FD CB XX EE	23
+SET	5,A		CB EF		8
+SET	5,B		CB E8		8
+SET	5,C		CB E9		8
+SET	5,D		CB EA		8
+SET	5,E		CB EB		8
+SET	5,H		CB EC		8
+SET	5,L		CB ED		8
+SET	6,(HL)		CB F6		15
+SET	6,(IX + dis)	DD CB XX F6	23
+SET	6,(IY + dis)	FD CB XX F6	23
+SET	6,A		CB F7		8
+SET	6,B		CB F0		8
+SET	6,C		CB F1		8
+SET	6,D		CB F2		8
+SET	6,E		CB F3		8
+SET	6,H		CB F4		8
+SET	6,L		CB F5		8
+SET	7,(HL)		CB FE		15
+SET	7,(IX + dis)	DD CB XX FE	23
+SET	7,(IY + dis)	FD CB XX FE	23
+SET	7,A		CB FF		8
+SET	7,B		CB F8		8
+SET	7,C		CB F9		8
+SET	7,D		CB FA		8
+SET	7,E		CB FB		8
+SET	7,H		CB FC		8
+SET	7,L		CB FD		8
+SLA	(HL)		CB 26		15
+SLA	(IX + dis)	DD CB XX 26	23
+SLA	(IY + dis)	FD CB XX 26	23
+SLA	A		CB 27		8
+SLA	B		CB 20		8
+SLA	C		CB 21		8
+SLA	D		CB 22		8
+SLA	E		CB 23		8
+SLA	H		CB 24		8
+SLA	L		CB 25		8
+SRA	(HL)		CB 2E		15
+SRA	(IX + dis)	DD CB XX 2E	23
+SRA	(IY + dis)	FD CB XX 2E	23
+SRA	A		CB 2F		8
+SRA	B		CB 28		8
+SRA	C		CB 29		8
+SRA	D		CB 2A		8
+SRA	E		CB 2B		8
+SRA	H		CB 2C		8
+SRA	L		CB 2D		8
+SRL	(HL)		CB 3E		15
+SRL	(IX + dis)	DD CB XX 3E	23
+SRL	(IY + dis)	FD CB XX 3E	23
+SRL	A		CB 3F		8
+SRL	B		CB 38		8
+SRL	C		CB 39		8
+SRL	D		CB 3A		8
+SRL	E		CB 3B		8
+SRL	H		CB 3C		8
+SRL	L		CB 3D		8
+SUB	(HL)		96		7
+SUB	(IX + dis)	DD 96 XX	19
+SUB	(IY + dis)	FD 96 XX	19
+SUB	A		97		4
+SUB	B		90		4
+SUB	C		91		4
+SUB	D		92		4
+SUB	E		93		4
+SUB	H		94		4
+SUB	L		95		4
+SUB	NN		D6 NN		7
+XOR	(HL)		AE		7
+XOR	(IX + dis)	DD AE XX	19
+XOR	(IY + dis)	FD AE XX	19
+XOR	A		AF		4
+XOR	B		A8		4
+XOR	C		A9		4
+XOR	D		AA		4
+XOR	E		AB		4
+XOR	H		AC		4
+XOR	L		AD		4
+XOR	NN		EE NN		7
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+-		CY  Z   P/V S   N   H	-
+----------------------------------------------------------
+ADC HL,XX	*   *   V   *   0   .
+ADC A,X;ADD A,X *   *   V   *   0   *
+ADD XX XX	*   .   .   .   0   ?
+AND X		0   *   P   *   0   *
+BIT b,X		.   *   ?   ?   0   1	Z=log. stav bitu b
+CALL		         ---
+CCF		*   .   .   .   0   ?
+CP X		*   *   V   *   1   *
+CPD;CPI;	.   *   V   *   1   *	P/V=0, ked BC=0
+CPDR;CPIR 				Z=1, ked A=(HL)
+CPL		.   .   .   .   1   1
+DAA		*   *   P   *   .   *
+DEC X		.   *   V   *   1   *
+DEC XX		         ---
+DI;EI		         ---
+DJNZ		         ---
+EX;EXX		         ---
+HALT		         ---
+IM 0;IM 1;IM 2	         ---
+INC X		.   *   V   *   0   *
+INC XX		         ---
+IN A,(port)	         ---
+IN r,(C)	.   *   P   *   0   *
+IND;INI		.   *   ?   ?   1   ?	Z=1, ked B=0
+INDR;INIR	.   1   ?   ?   1   ?	Z=1, ked B=0
+JP;JR		         ---
+LD A,I;LD A,R	.   *   IFF *   0   0	P/V zobrazi stav IFF
+LDD;LDI		.   .   *   .   0   0
+LDDR;LDIR	.   .   0   .   0   0	P/V=0, ked BC=0
+zvysok LD	         ---
+NEG		*   *   V   *   0   *
+NOP		         ---
+OR X		0   *   P   *   0   *
+OUDR;OUIR	.   1   ?   ?   1   ?	Z=1; ked B=0
+OUTD;OUTR	.   *   ?   ?   1   ?	Z=1; ked B=0
+OUT (C),r;
+OUT (port),A	         ---
+RET		         ---
+POP AF		*   *   *   *   *   *
+POP XX;PUSH XX	         ---
+RES b,X		         ---
+RLA;RLCA;
+RRA;RRCA	*   .   .   .   0   0
+RLD;RRD		.   *   P   *   0   0
+RL X;RLC X;
+RR X;RRC X	*   *   P   *   0   0
+SLA X;SRA x;
+SRL X;SBC HL,XX	*   *   V   *   1   ?
+SCF		1   .   .   .   0   0
+SET b,X		         ---
+SBC X;SUB X	*   *   V   *   1   *
+XOR X		0   *   P   *   0   *
+----------------------------------------------------------

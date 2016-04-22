@@ -1,0 +1,13 @@
+#!/bin/sh
+
+MACHINE="crazy"
+
+if [ "`uname -n`" != "$MACHINE" ]; then
+	echo "Tak na tomto stroji to moze byt nebezpecne."
+	echo "Ak to skutocne chces, musis editnut zdrojak."
+	exit 1
+fi
+
+killall -9 runppp pppd 2>/dev/null
+rm -f /var/lock/LCK*
+
